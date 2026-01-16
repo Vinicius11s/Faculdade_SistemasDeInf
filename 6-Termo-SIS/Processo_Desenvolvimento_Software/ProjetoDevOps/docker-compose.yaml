@@ -1,0 +1,33 @@
+services:
+  agile-db:
+    image: mysql:8.0
+    container_name: agile-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: agile
+      MYSQL_USER: agileuser
+      MYSQL_PASSWORD: agilepass
+    ports:
+      - "3306:3306"
+    volumes:
+      - agile-db-data:/var/lib/mysql
+    networks:
+      - agile-network
+
+  agile-app:
+    build: .
+    container_name: agile-app
+    depends_on:
+      - agile-db
+    ports:
+      - "8080:8080"
+    environment:
+      ConnectionStrings__DefaultConnection: "server=agile-db;port=3306;database=agile;user=agileuser;password=agilepass"
+    networks:
+      - agile-network
+
+volumes:
+  agile-db-data:
+
+networks:
+  agile-network:

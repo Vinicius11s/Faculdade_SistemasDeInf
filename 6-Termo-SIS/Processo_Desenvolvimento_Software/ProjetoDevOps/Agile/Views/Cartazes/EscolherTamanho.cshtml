@@ -1,0 +1,61 @@
+﻿@model List<(string Nome, string Imagem, string Id)>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home - Agile";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AgileIndex.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
+    <style>
+        .cards-container {
+            margin-top: -80px !important;
+            padding-top: 60px !important;
+            margin-bottom: 4rem !important;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Aplicar o mesmo fundo da EscolherFundo
+            document.body.style.backgroundImage = "url('/images/teste.png')";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundColor = "#000";
+        });
+    </script>
+}
+
+<section class="container py-5">
+    <div class="row justify-content-center cards-container">
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+            <!-- Card A5 -->
+            <div class="card cartaz-card h-100"
+                 style="cursor:pointer;"
+                 onclick="location.href='@Url.Action("EscolherFundo", "Fundos", new { tamanho = "A5" })'">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Gerar Cartazes A5</h5>
+                    <p class="card-text text-secondary">Ideal para impressão em folhas A4 divididas ao centro.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+            <!-- Card A4 -->
+            <div class="card cartaz-card h-100"
+                 style="cursor:pointer;"
+                 onclick="location.href='@Url.Action("EscolherFundo", "Fundos", new { tamanho = "A4" })'">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Gerar Cartazes A4</h5>
+                    <p class="card-text text-secondary">Ideal para impressão em folhas A4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

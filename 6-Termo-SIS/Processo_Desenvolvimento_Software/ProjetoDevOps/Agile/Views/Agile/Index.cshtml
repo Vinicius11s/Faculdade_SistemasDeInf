@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/AgileIndex.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/responsive.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/agile-responsive.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('fundo-pagina-inicial');
+        });
+    </script>
+}
+
+<!-- Seção  -->
+    <div class="primary_section">
+
+        <!-- Título principal do cabeçalho -->
+        <h1>A SUA EMPRESA MERECE MAIS QUE PROCESSOS, MERECE PROCESSOS ÁGEIS. MERECE AUTOMAÇÃO.</h1>
+
+        <!-- Parágrafo de descrição -->
+        <p>Venha conhcecer o Agile! Diga Adeus ao trabalho manual, reduzindo a carga de trabalho em 99% do tempo, minimize os erros humanos e ganhe produtividade em seu dia-a-dia corporativo.</p>
+
+        <!-- Botões de ação -->
+        <div class="buttons">
+            <a href="#" class="btn btn-primary">SOLICITAR DEMONSTRAÇÃO</a>
+            <a href="#" class="btn btn-secondary">NOSSO SOFTWARE</a>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal da página -->
+    <div class="main-content">
+        <!-- Imagem ilustrativa -->
+        <img src="~/images/EscritorioAgilee.png" alt="Mulher feliz em escritorio">
+
+        <!-- Texto ao lado da imagem -->
+        <div class="content-text">
+            <h2>CARTAZES AUTOMÁTICOS</h2>
+            <p>Crie centenas de cartazes de oferta em minutos e impulsione suas vendas.</p>
+            <p>Com o software Agile, você transforma dados em resultados, ganhando agilidade para focar no que realmente importa: o crescimento da sua loja.</p>
+
+            <!-- Bloco com métricas da empresa -->
+            <div class="metrics">
+                <div class="metric-item">
+                    <span>+1,000</span>
+                    <p>Possibilidade de Cartazes por Dia!</p>
+                </div>
+                <div class="metric-item">
+                    <span>+99%</span>
+                    <p>Tempo Otimizado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/18996251546" class="whatsapp-btn">
+        <!-- Ícone de balão de mensagem (SVG) -->
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             class="feather feather-message-circle">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </a>

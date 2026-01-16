@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif; /* Define a fonte principal da p�gina */
+    color: #fff; /* Cor padr�o do texto */
+    background-image: url('/images/teste.png'); /* Caminho da imagem */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetir a imagem */
+    background-color: #000; /* Cor fallback caso a imagem n�o carregue */
+}
+
+/* --- HEADER (cabe�alho) --- */
+.primary_section {
+    margin-top: -85px;
+    text-align: center; /* Centraliza o conte�do (texto/bot�es) */
+    padding: 100px 20px; /* Espa�amento interno grande em cima e nas laterais */
+    position: relative; /* Necess�rio para posicionar os elementos internos */
+    overflow: hidden; /* Esconde partes que ultrapassem a �rea */
+}
+
+/* Container de elementos decorativos no header */
+.header-bg-elements {
+    position: absolute; /* Fica fixo dentro do header */
+    top: 0;
+    left: 0; /* Come�a no canto superior esquerdo */
+    width: 100%;
+    height: 100%; /* Ocupa todo o header */
+    pointer-events: none; /* Ignora cliques do usu�rio */
+    z-index: 1; /* Fica atr�s do texto */
+}
+
+    .header-bg-elements img {
+        opacity: 0.1; /* Deixa as imagens transparentes */
+        position: absolute; /* Para posicionar livremente no header */
+    }
+
+    /* SVG do lado esquerdo */
+    .header-bg-elements .car-left {
+        top: 50%; /* Verticalmente no meio */
+        left: -100px; /* Empurrado para fora do lado esquerdo */
+        width: 300px; /* Tamanho */
+        transform: translateY(-50%) rotate(10deg); /* Centraliza no eixo Y e rotaciona */
+    }
+
+    /* SVG do lado direito */
+    .header-bg-elements .car-right {
+        top: 50%;
+        right: -100px; /* Empurrado para fora do lado direito */
+        width: 300px;
+        transform: translateY(-50%) rotate(-10deg);
+    }
+
+/* T�tulo principal */
+.header h1 {
+    background-color: transparent; /* Sem fundo */
+    font-size: 3em; /* Tamanho bem grande */
+    margin-bottom: 20px; /* Espa�o abaixo */
+    position: relative;
+    z-index: 2; /* Fica acima do fundo decorativo */
+}
+
+/* Subt�tulo */
+.header p {
+    background-color: transparent;
+    font-size: 1.2em; /* Texto m�dio */
+    max-width: 600px; /* Limita a largura */
+    margin: 45px auto 40px; /* Centraliza e d� espa�o embaixo */
+    position: relative;
+    z-index: 2;
+}
+
+/* Container dos bot�es */
+.buttons {
+    display: flex; /* Alinha lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espa�o entre os bot�es */
+    position: relative;
+    margin-top: 60px;
+    z-index: 2;
+}
+
+/* Estilo base de todos os bot�es */
+.btn {
+    padding: 15px 30px; /* Espa�amento interno */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s ease; /* Anima��o suave na cor */
+}
+
+/* Bot�o amarelo principal */
+.btn-primary {
+    background-color: #FFD700; /* Amarelo */
+    color: #000; /* Texto preto */
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #e6c200; /* Amarelo mais escuro no hover */
+    }
+
+/* Bot�o secund�rio (transparente com borda amarela) */
+.btn-secondary {
+    color: white; /* Texto amarelo */
+    background-color: transparent; /* remove o fundo preto */
+    border: 2px solid #FFD700; /* Borda amarela */
+}
+
+    .btn-secondary:hover {
+        background-color: #e6c200; /* Amarelo mais escuro no hover */
+        color: #000; /* Texto preto */
+    }
+
+/* --- CONTE�DO PRINCIPAL --- */
+.main-content {
+    display: flex; /* Organiza em linha (imagem + texto lado a lado) */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 50px; /* Espa�o entre imagem e texto */
+    padding: 0 20px 50px 20px; /* Espa�amento interno */
+    background-color: transparent; /* remove o fundo preto */
+}
+
+    .main-content img {
+        max-width: 400px; /* Limita tamanho da imagem */
+        width: 100%; /* Responsivo */
+        height: auto; /* Mantém proporção */
+        border-radius: 10px; /* Bordas arredondadas */
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); /* Sombra amarela suave */
+        object-fit: contain; /* Garante que a imagem não seja cortada */
+    }
+
+/* Texto ao lado da imagem */
+.content-text {
+    max-width: 500px; /* Limita largura */
+}
+
+    .content-text h2 {
+        font-size: 2.5em; /* T�tulo grande */
+        margin-bottom: 20px;
+    }
+
+    .content-text p {
+        font-size: 1.1em; /* Texto m�dio */
+        line-height: 1.6; /* Espa�amento entre linhas */
+    }
+
+/* M�tricas (clientes, usu�rios, anos) */
+.metrics {
+    display: flex; /* Alinha lado a lado */
+    gap: 40px; /* Espa�o entre blocos */
+    margin-top: 30px;
+}
+
+.metric-item {
+    text-align: center; /* Centraliza cada m�trica */
+}
+
+    .metric-item span {
+        font-size: 2.5em; /* N�meros bem grandes */
+        font-weight: bold;
+        color: #FFD700; /* Amarelo */
+    }
+
+/* --- BOT�O WHATSAPP --- */
+.whatsapp-btn {
+    position: fixed; /* Fica fixo na tela mesmo rolando */
+    bottom: 30px; /* Dist�ncia da parte de baixo */
+    right: 30px; /* Dist�ncia da lateral direita */
+    background-color: #25D366; /* Verde do WhatsApp */
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%; /* Formato circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+    font-size: 24px; /* �cone grande */
+    text-decoration: none; /* Remove sublinhado */
+    z-index: 1000; /* Garante que fica acima de tudo */
+}
+
+/* Remove qualquer linha entre botões e main-content */
+.primary_section, .buttons, .main-content {
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    background: transparent !important;
+}
+
+/* Espaçamento entre título e parágrafo */
+.primary_section p {
+    margin-top: 20px !important;
+}
+
+/* Ajusta espaçamento dos botões */
+.buttons {
+    margin-top: 40px !important; /* reduz espaço entre parágrafo e botões */
+}
+
+/* Main content com gradiente sutil e mais próximo */
+.main-content {
+    margin-top: -20px !important; /* sobe o main-content */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent) !important;
+    padding-top: 30px !important;
+}
+
+/* Padroniza botões com visual premium */
+.btn-primary {
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+    border: 2px solid #FFD700 !important;
+    color: #000 !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FFA500, #FF8C00) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    border: 2px solid #FFD700 !important;
+    color: #FFD700 !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important;
+    color: #000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+}

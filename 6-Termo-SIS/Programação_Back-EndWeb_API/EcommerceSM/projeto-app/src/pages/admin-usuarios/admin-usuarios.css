@@ -1,0 +1,193 @@
+/* Estilos específicos para a tela de gerenciamento de usuários */
+
+.usuario-avatar {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--toledo-primary), var(--toledo-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  color: var(--toledo-dark);
+  background-color: #f8f9fa;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn-group .btn {
+  border-radius: var(--border-radius-sm);
+}
+
+.btn-group .btn:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-header.bg-toledo-warning {
+  background-color: var(--toledo-warning) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--toledo-primary);
+  box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--toledo-primary);
+  border-color: var(--toledo-primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--toledo-primary);
+  box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+.input-group-text {
+  background-color: var(--toledo-light);
+  border-color: var(--toledo-primary);
+  color: var(--toledo-dark);
+}
+
+.badge.bg-success {
+  background-color: var(--toledo-accent) !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--toledo-gray) !important;
+}
+
+.btn-toledo-warning {
+  background-color: var(--toledo-warning);
+  border-color: var(--toledo-warning);
+  color: var(--toledo-dark);
+}
+
+.btn-toledo-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  color: var(--toledo-dark);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+  
+  .usuario-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 0.875rem;
+  }
+  
+  .btn-group .btn {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .table td {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* Estados dos botões */
+.btn-outline-warning {
+  color: var(--toledo-warning);
+  border-color: var(--toledo-warning);
+}
+
+.btn-outline-warning:hover {
+  background-color: var(--toledo-warning);
+  border-color: var(--toledo-warning);
+  color: var(--toledo-dark);
+}
+
+.btn-outline-danger {
+  color: var(--toledo-danger);
+  border-color: var(--toledo-danger);
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--toledo-danger);
+  border-color: var(--toledo-danger);
+  color: white;
+}
+
+.btn-outline-success {
+  color: var(--toledo-accent);
+  border-color: var(--toledo-accent);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--toledo-accent);
+  border-color: var(--toledo-accent);
+  color: white;
+}
+
+.btn-outline-primary {
+  color: var(--toledo-primary);
+  border-color: var(--toledo-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--toledo-primary);
+  border-color: var(--toledo-primary);
+  color: white;
+}
+
+/* Links na tabela */
+.table a {
+  color: var(--toledo-primary);
+  text-decoration: none;
+}
+
+.table a:hover {
+  color: var(--toledo-secondary);
+  text-decoration: underline;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+
+

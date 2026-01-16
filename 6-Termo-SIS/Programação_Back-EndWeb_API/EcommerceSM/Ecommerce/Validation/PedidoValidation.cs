@@ -1,0 +1,25 @@
+﻿using Dominio.DTOs;
+using FluentValidation;
+
+namespace Ecommerce.Validation
+{
+    public class PedidoValidation
+        : AbstractValidator<PedidoDTO>
+    {
+        public PedidoValidation() {
+            RuleFor(p=>p.Descricao)
+                .MaximumLength(150)
+                .WithMessage("A descrição precisa ter no" +
+                " máximo 150 caracteres!");
+
+            RuleFor(p => p.Descricao)
+                .NotEmpty()
+                .WithMessage("A descrição não pode ser vazia!");
+
+            RuleFor(p => p.Descricao)
+                .NotNull()
+                .WithMessage("A descrição não pode ser vazia!");
+
+        }
+    }
+}

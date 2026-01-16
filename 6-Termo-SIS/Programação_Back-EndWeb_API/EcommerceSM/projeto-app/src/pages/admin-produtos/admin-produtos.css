@@ -1,0 +1,97 @@
+/* Estilos específicos para a tela de gerenciamento de produtos */
+
+.produto-thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid #dee2e6;
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  color: var(--toledo-dark);
+  background-color: #f8f9fa;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn-group .btn {
+  border-radius: var(--border-radius-sm);
+}
+
+.btn-group .btn:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--toledo-primary);
+  box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+.input-group-text {
+  background-color: var(--toledo-light);
+  border-color: var(--toledo-primary);
+  color: var(--toledo-dark);
+}
+
+.badge.badge-toledo {
+  background-color: var(--toledo-primary);
+  color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+  
+  .produto-thumb {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .btn-group .btn {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+/* Estados de estoque */
+.badge.bg-success {
+  background-color: var(--toledo-accent) !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--toledo-warning) !important;
+  color: var(--toledo-dark);
+}
+
+.badge.bg-danger {
+  background-color: var(--toledo-danger) !important;
+}
+
+
+
+

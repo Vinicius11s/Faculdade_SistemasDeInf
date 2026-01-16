@@ -1,0 +1,99 @@
+/* Estilos específicos para a tela de finalizar pedido */
+
+.card-header.bg-toledo-primary {
+  background: linear-gradient(135deg, var(--toledo-primary), var(--toledo-secondary)) !important;
+}
+
+.card-header.bg-toledo-secondary {
+  background: linear-gradient(135deg, var(--toledo-secondary), var(--toledo-accent)) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--toledo-primary);
+  box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+.list-group-item {
+  border-left: none;
+  border-right: none;
+  border-radius: 0 !important;
+}
+
+.list-group-item:first-child {
+  border-top: none;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.alert-toledo-info {
+  background-color: var(--toledo-light);
+  border-color: var(--toledo-accent);
+  color: var(--toledo-dark);
+}
+
+.alert-toledo-info .fa-shopping-cart {
+  color: var(--toledo-primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 1rem 0.5rem;
+  }
+  
+  .list-group-item {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+  
+  .d-flex.gap-2 .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Estados dos botões */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Estilos para o resumo */
+.border-top {
+  border-top: 2px solid var(--toledo-light) !important;
+}
+
+.text-toledo-primary {
+  color: var(--toledo-primary) !important;
+}
+
+
+
+

@@ -1,0 +1,382 @@
+/* Toledo Shop - Paleta de Cores Profissional */
+
+:root {
+  /* Cores principais */
+  --toledo-primary: #1B5E20;      /* Verde escuro principal */
+  --toledo-secondary: #2E7D32;    /* Verde médio */
+  --toledo-accent: #4CAF50;       /* Verde claro para destaques */
+  --toledo-light: #C8E6C9;        /* Verde muito claro */
+  
+  /* Cores neutras */
+  --toledo-dark: #1A1A1A;         /* Preto suave */
+  --toledo-gray: #6B7280;         /* Cinza médio */
+  --toledo-light-gray: #F3F4F6;   /* Cinza claro */
+  --toledo-white: #FFFFFF;        /* Branco */
+  
+  /* Cores de status */
+  --toledo-success: #10B981;      /* Verde sucesso */
+  --toledo-warning: #F59E0B;      /* Amarelo aviso */
+  --toledo-danger: #EF4444;       /* Vermelho erro */
+  --toledo-info: #3B82F6;         /* Azul informação */
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  /* Bordas */
+  --border-radius-sm: 0.375rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+}
+
+/* Reset e base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--toledo-light-gray);
+  color: var(--toledo-dark);
+  line-height: 1.6;
+}
+
+/* Botões Toledo Shop */
+.btn-toledo-primary {
+  background-color: var(--toledo-primary);
+  border-color: var(--toledo-primary);
+  color: var(--toledo-white);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-toledo-primary:hover {
+  background-color: var(--toledo-secondary);
+  border-color: var(--toledo-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-toledo-secondary {
+  background-color: var(--toledo-accent);
+  border-color: var(--toledo-accent);
+  color: var(--toledo-white);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+}
+
+.btn-toledo-secondary:hover {
+  background-color: var(--toledo-secondary);
+  border-color: var(--toledo-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-toledo-outline {
+  background-color: transparent;
+  border: 2px solid var(--toledo-primary);
+  color: var(--toledo-primary);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+}
+
+.btn-toledo-outline:hover {
+  background-color: var(--toledo-primary);
+  color: var(--toledo-white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Cards de produto */
+.produto-card {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  background-color: var(--toledo-white);
+}
+
+.produto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 390px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.produto-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Header e navegação */
+.toledo-header {
+  background: linear-gradient(135deg, var(--toledo-primary) 0%, var(--toledo-secondary) 100%);
+  box-shadow: var(--shadow-lg);
+}
+
+.toledo-header .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+}
+
+.toledo-header .nav-link:hover {
+  color: var(--toledo-white) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.toledo-header .nav-link.active {
+  color: var(--toledo-white) !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Formulários */
+.form-control-toledo {
+  border: 2px solid var(--toledo-light-gray);
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.form-control-toledo:focus {
+  border-color: var(--toledo-accent);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  outline: none;
+}
+
+.form-label-toledo {
+  font-weight: 600;
+  color: var(--toledo-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* Alertas */
+.alert-toledo-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--toledo-success);
+  color: var(--toledo-success);
+  border-radius: var(--border-radius-md);
+}
+
+.alert-toledo-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid var(--toledo-warning);
+  color: var(--toledo-warning);
+  border-radius: var(--border-radius-md);
+}
+
+.alert-toledo-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--toledo-danger);
+  color: var(--toledo-danger);
+  border-radius: var(--border-radius-md);
+}
+
+.alert-toledo-info {
+  background-color: rgba(59, 130, 246, 0.1);
+  border: 1px solid var(--toledo-info);
+  color: var(--toledo-info);
+  border-radius: var(--border-radius-md);
+}
+
+/* Carrinho de compras */
+.carrinho-sidebar {
+  background-color: var(--toledo-white);
+  box-shadow: var(--shadow-xl);
+  border-left: 4px solid var(--toledo-accent);
+}
+
+.carrinho-item {
+  border-bottom: 1px solid var(--toledo-light-gray);
+  padding: 1rem 0;
+}
+
+.carrinho-item:last-child {
+  border-bottom: none;
+}
+
+/* Badges */
+.badge-toledo {
+  background-color: var(--toledo-accent);
+  color: var(--toledo-white);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Preços */
+.preco-toledo {
+  color: #E65100;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Loading */
+.spinner-toledo {
+  color: var(--toledo-primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .produto-card {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-toledo-primary,
+  .btn-toledo-secondary,
+  .btn-toledo-outline {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Sobrescrever estilos Bootstrap azuis */
+.nav-link {
+  color: var(--toledo-gray) !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--toledo-primary) !important;
+  background-color: var(--toledo-light) !important;
+}
+
+.nav-link.active {
+  color: var(--toledo-white) !important;
+  background-color: var(--toledo-primary) !important;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--toledo-primary) !important;
+}
+
+/* Sobrescrever cores primárias do Bootstrap */
+.text-primary {
+  color: var(--toledo-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--toledo-primary) !important;
+  border-color: var(--toledo-primary) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--toledo-secondary) !important;
+  border-color: var(--toledo-secondary) !important;
+}
+
+.btn-outline-primary {
+  color: var(--toledo-primary) !important;
+  border-color: var(--toledo-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--toledo-primary) !important;
+  border-color: var(--toledo-primary) !important;
+}
+
+/* Utilitários */
+.text-toledo-primary {
+  color: var(--toledo-primary) !important;
+}
+
+.text-toledo-secondary {
+  color: var(--toledo-secondary) !important;
+}
+
+.text-toledo-accent {
+  color: var(--toledo-accent) !important;
+}
+
+.bg-toledo-primary {
+  background-color: var(--toledo-primary) !important;
+}
+
+.bg-toledo-secondary {
+  background-color: var(--toledo-secondary) !important;
+}
+
+.bg-toledo-accent {
+  background-color: var(--toledo-accent) !important;
+}
+
+.bg-toledo-light {
+  background-color: var(--toledo-light) !important;
+}
+
+/* Cores de texto Toledo */
+.text-toledo-success {
+  color: var(--toledo-success) !important;
+}
+
+.text-toledo-warning {
+  color: var(--toledo-warning) !important;
+}
+
+.text-toledo-info {
+  color: var(--toledo-info) !important;
+}
+
+/* Footer */
+footer a:hover {
+  color: var(--toledo-accent) !important;
+  transition: color 0.3s ease;
+}
+
+footer .fab, footer .fas {
+  transition: transform 0.3s ease;
+}
+
+footer .fab:hover, footer .fas:hover {
+  transform: scale(1.1);
+}

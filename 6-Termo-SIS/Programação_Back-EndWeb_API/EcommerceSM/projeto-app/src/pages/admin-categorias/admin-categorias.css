@@ -1,0 +1,111 @@
+/* Estilos específicos para a tela de gerenciamento de categorias */
+
+.categoria-card {
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-lg);
+}
+
+.categoria-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.categoria-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--toledo-primary), var(--toledo-secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.btn-group .btn {
+  border-radius: var(--border-radius-sm);
+}
+
+.btn-group .btn:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--toledo-primary);
+  box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+.input-group-text {
+  background-color: var(--toledo-light);
+  border-color: var(--toledo-primary);
+  color: var(--toledo-dark);
+}
+
+.alert-toledo-info {
+  background-color: var(--toledo-light);
+  border-color: var(--toledo-accent);
+  color: var(--toledo-dark);
+}
+
+.alert-toledo-info .fa-info-circle {
+  color: var(--toledo-primary);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .categoria-card .card-body {
+    padding: 1rem 0.5rem;
+  }
+  
+  .categoria-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  .btn-group .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categoria-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+
+

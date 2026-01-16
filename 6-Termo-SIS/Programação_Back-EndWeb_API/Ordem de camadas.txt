@@ -1,0 +1,30 @@
+Ordem de camadas 
+-projeto de Domain
+__Entidades
+__Dtos
+-projeto de Infraestrutura
+__Contexto
+__Repository 
+-Interfaces
+__Service
+__Repository 
+-Service
+-ProjetoWeb
+
+Ordem de Processamento
+1-Tudo começa com uma ação na interface. O usuário clica em um link como "Ver Produtos". Essa ação envia uma requisição HTTP para o servidor. A View (ProjetoWeb2025/Views) é responsável por gerar essa requisição.
+
+2-O Controller recebe a requisição. Ele a recebe e, como sua função é apenas orquestrar, ele sabe que para mostrar os produtos, precisa de dados.
+
+3-O Controller acessa o Service. Ele faz uma chamada para a camada de Service.
+
+4-O Service acessa o Repositório. O Service contém a lógica de negócio e sabe que precisa obter dados. Para isso, ele faz uma chamada para o Repositório.
+
+5-O Repositório acessa o Banco de Dados. O Repositório utiliza o Contexto (Infraestrutura) para se conectar e obter os dados na forma de Entidades.
+
+6-Os Dados são preparados. As Entidades retornadas do banco de dados são convertidas em DTOs.
+
+7-Os Dados Voltam para o Controller. O Repositório devolve os DTOs para o Service, que os retorna para o Controller.
+
+8-O Controller prepara os dados para a View.
+

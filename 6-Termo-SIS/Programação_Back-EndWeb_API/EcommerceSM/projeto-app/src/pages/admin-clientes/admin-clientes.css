@@ -1,0 +1,117 @@
+/* Estilos específicos para a tela de gerenciamento de clientes */
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  color: var(--toledo-dark);
+  background-color: #f8f9fa;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn-group .btn {
+  border-radius: var(--border-radius-sm);
+}
+
+.btn-group .btn:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+.form-control:focus {
+  border-color: var(--toledo-primary);
+  box-shadow: 0 0 0 0.2rem rgba(27, 94, 32, 0.25);
+}
+
+.input-group-text {
+  background-color: var(--toledo-light);
+  border-color: var(--toledo-primary);
+  color: var(--toledo-dark);
+}
+
+.badge.badge-toledo {
+  background-color: var(--toledo-primary);
+  color: white;
+}
+
+code {
+  background-color: var(--toledo-light);
+  color: var(--toledo-dark);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+  
+  .btn-group .btn {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+  
+  .table td {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* Estados de formulário */
+.form-control.is-invalid {
+  border-color: var(--toledo-danger);
+}
+
+.form-control.is-valid {
+  border-color: var(--toledo-accent);
+}
+
+/* Links na tabela */
+.table a {
+  color: var(--toledo-primary);
+  text-decoration: none;
+}
+
+.table a:hover {
+  color: var(--toledo-secondary);
+  text-decoration: underline;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table tbody tr {
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+
+

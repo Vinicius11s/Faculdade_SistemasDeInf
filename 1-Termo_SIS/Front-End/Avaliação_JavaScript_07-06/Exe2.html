@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Exe2</title>
+
+  </head>
+  <body>
+    <h1>Exercicio 2</h1>
+  <main>
+    <form>
+        <div class="col-7">
+            <label>Qual o salário bruto ?</label>
+            <input class="form-control" type="text" id="salario"/>
+      </div>
+        <div class="col-7">
+            <label>Qual o valor da prestação ?</label>
+            <input class="form-control" type="text" id="prestacao"/>
+      </div>
+      <div class="col-6 form-group">
+          <label></label>
+          <input type="text" readonly
+          class="form-control" id="txtresultado"/>
+    </div>
+      <div class="container-fluid">
+          <input type="button"  class="btn btn-success"
+          value="calcular" onclick="Calcula()"/>
+    </div>
+    </form>
+  </main>
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" ></script>      
+    <script src="js/bootstrap.min.js" ></script>
+    <script>
+      function Calcula(){
+        var salario, prestacao, resultado;
+        salario = document.getElementById("salario").value;
+        prestacao = document.getElementById("prestacao").value;
+        resultado = salario * 0.3;
+
+        if(prestacao > resultado){
+           resultado = salario * 0.3;
+           document.getElementById("txtresultado").value = "O Emprestimo não poderá ser Concedido"; 
+        }
+        else{
+          document.getElementById("txtresultado").value = "O Emprestimo poderá ser concedido";
+          }
+      }
+    </script>
+
+
+  </body>
+</html>

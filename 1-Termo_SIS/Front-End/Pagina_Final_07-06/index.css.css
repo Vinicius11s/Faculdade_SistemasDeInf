@@ -1,0 +1,43 @@
+.header {
+    align-items: center;
+    background-color: #050022;
+    height: 100%;
+    width: 100%;
+    color: white;
+
+}
+
+#main{
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    
+}
+.footer {
+    background-color: black;
+    color: white;
+
+}
+
+.form{
+    margin-right: 30%;
+    margin-left: 30%;
+    background-color: white;
+
+}
+.logo{
+    margin-top: 24px;
+    text-align: center;
+    font-family: Bebas Neue;
+    color: white;
+    font-size: 90px;
+
+}
+.img{
+    float: left;
+    border: 0px;
+    image-orientation: top;
+
+}

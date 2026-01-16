@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Olá, mundo!</title>
+
+  </head>
+  <br/>
+  <body>
+    <div id="div1" style="background-color: gray;" class="container-fluid">
+        <p id="paragrafo"> Front-end: o que é e como funciona?
+                O Front-end está muito relacionado com a interface gráfica do projeto. Ou seja, é onde se 
+            desenvolve a aplicação com a qual o usuário irá interagir diretamente, seja em softwares, sites,
+            aplicativos, etc. Portanto, é essencial que o desenvolvedor tenha uma preocupação com a
+            experiência do usuário.
+                Dev front-end é um termo muito utilizado para identificar profissionais que se especializaram 
+            especificamente nessa área. Além disso, apesar de envolver a interface do projeto, o programador 
+            front-end não é formado em design. A diferença entre os dois é que o desenvolvedor não desenha 
+            visualmente a interface.
+                Na verdade, no desenvolvimento front-end, o profissional irá mexer com o código em si,
+            projetando com quais ferramentas o usuário irá interagir. Por esse motivo, é importante ter essa 
+            diferença em mente quando falamos sobre o assunto. </p>
+    </div>
+    <br/>
+        <div id="div2" style="background-color: aqua;" class="container-fluid">
+            <p></p>
+ </div>
+        <br/>
+        <br/>
+        <div>
+            <button id="trocarTexto" type="button" class="btn btn-success">Trocar Texto</button>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+      const div1 = document.getElementById('div1');
+      const div2 = document.getElementById('div2');
+      const button = document.getElementById('trocarTexto');
+
+      button.addEventListener('click', () => {
+        const paragrafo = document.getElementById('paragrafo');
+
+        if (paragrafo.parentNode === div1) {
+          div2.appendChild(paragrafo);
+        } else {
+          div1.appendChild(paragrafo);
+        }
+      });
+    });
+    </script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+
+  </head>
+
+  </body>
+</html>

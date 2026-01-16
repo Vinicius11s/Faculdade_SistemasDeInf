@@ -1,0 +1,51 @@
+4) Descreva o que é Interface Humano Computador e o que é usabilidade.
+Descreva os 10 princípios de usabilidade descritos por Jackob Nielsen.
+
+A interface Humano computador é um setor da computação que faz você entender como cada
+pessoa usa o seu computador e investigar varias formas de interação.
+A Usabilidade é um pequeno termo utilizado para definir qual a facilidade que as pessoas tem
+para usar alguma determinada ferramenta para realizar uma tarefa.
+
+Princípios
+1- Visibilidade do status do sistema...
+Esse princípio fala que um sistema deve sempre manter os usuários informados sobre o que está acontecendo atravéz
+de feedbacks de tempo médio em tempo médio. 
+
+2- Correspondência entre o sistema e o mundo real...
+O sistema deve falar e se apropriar a linguagem dos usuários, conceitos, frases, ao invéz de termos difíceis
+tornanso assim as informações mais facil de entender e de forma natural e lógica.
+
+3- Controle do usuário e liberdade...
+Usuários sempre vão fazer algo de errado, então ter funções e saídas bem marcadas para sair daquele estado indesejado.
+
+4- Consistência e padrões...
+Os usuários não precisam adivinhar que diferentes palavras ou ações que significam a mesma coisa.
+Siga as convenções da plataforma.
+
+5- Prevenção de erros...
+Ainda melhor do que boas mensagens de erro é um projeto cuidadoso que impede que em primeiro lugar esse erro possa ocorrer.
+Eliminando as condições passíveis de erros ou verificá-las, apresentado aos usuários uma opção de confirmação antes de
+se comprometerem com uma determinada ação.
+
+6- Reconhecimento em vez de recordação...
+Minimizar a carga de memória do usuário tornando objetos, ações e opções visíveis. O usuário não deve ter que se
+lembrar da informação de uma parte do diálogo para outra. Instruções de uso do sistema devem estar visíveis
+e serem facilmente de se recuperar quando necessário.
+
+7- Flexibilidade e eficiência de utilização...
+Aceleradores – invisíveis para o usuário novato – podem frequentemente acelerar a interação para o usuário experiente
+, que o sistema pode atender a ambos os usuários inexperientes e experientes. Permitir aos usuários personalizar ações
+freqüentes
+
+8- Estética e design minimalista...
+Os diálogos não devem conter informações irrelevantes ou raramente necessárias. Cada unidade extra de informação
+em um diálogo compete com as unidades relevantes de informação e diminui sua visibilidade relativa.
+
+9- Ajude os usuários a reconhecer, diagnosticar e resolver erros...
+Mensagens de erro deve ser claras e evidentes, sem códigos, indicar visivelmente o problema e sugerir uma solução 
+rapidamente.
+
+10- Ajuda e documentação...
+Se for preciso o uso de documentação, qualquer informação deve ser fácil de ser pesquisada, com foco na atividade
+do usuário, lista de passos concretas e não muito grandes.
+

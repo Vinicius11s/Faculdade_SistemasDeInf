@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Olá, mundo!</title>
+  </head>
+  <body>
+    <h1>Olá, mundo!</h1>
+<main>
+  <form>
+    <div class="col-7">
+      <label>Informe um peso</label>
+      <input class="form-control" type="text" id="peso"/>
+  </div>
+  <br/><br/>
+  <div class="col-7">
+      <select id="planeta" class="form-control"  > Selecione um planeta
+      <option id="Mercúrio">Mercúrio</option>
+      <option id="Venus">Venus</option>
+      <option id="Marte">Marte</option>
+      <option id="Jupiter">Jupiter</option>
+      <option id="Saturno">Saturno</option>
+      <option id="Urano">Urano</option>
+    </select>
+  </div>
+  <br/><br/>
+  <div class="col-7">
+      <label>Peso no Planeta</label>
+      <input class="form-control" type="text" readonly id="resultado"/>
+  </div>
+  </form>
+  <br/><br/>
+  <div class="container-fluid">
+      <input type="button"  class="btn btn-success"
+      value="calcular" onclick="Calcula()"/>
+</div>
+</main>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" ></script> 
+    <script src="js/bootstrap.min.js" ></script>
+    <script>
+      function Calcula(){
+      var peso, planeta;
+      peso = document.getElementById("peso").value;
+      planeta = document.getElementById("planeta").value;
+      
+      if(peso != "" && planeta == "Mercúrio"){
+        peso = parseFloat(peso);
+        planeta = parseFloat(planeta);
+        resultado = (peso / 10) * 0.37;
+        document.getElementById("resultado").value = resultado;
+      }
+      else{
+        if(peso != "" && planeta == "Venus"){
+          resultado = (peso / 10) * 0.88;
+          document.getElementById("resultado").value = resultado;
+        }
+        else{
+          if(peso != "" && planeta == "Marte"){
+          resultado = (peso / 10) * 0.38;
+          document.getElementById("resultado").value = resultado;
+         }
+         else{
+          if(peso != "" && planeta == "Jupiter"){
+          resultado = (peso / 10) * 2.64;
+          document.getElementById("resultado").value = resultado;
+          }
+          else{
+            if(peso != "" && planeta == "Saturno"){
+            resultado = (peso / 10) * 1.15;
+            document.getElementById("resultado").value = resultado;
+            }
+            else{
+              if(peso != "" && planeta == "Urano"){
+            resultado = (peso / 10) * 1.17;
+            document.getElementById("resultado").value = resultado;
+            }
+            else{
+              alert("Planeta não encontrado")
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+    
+    
+    </script>
+  </body>
+</html>

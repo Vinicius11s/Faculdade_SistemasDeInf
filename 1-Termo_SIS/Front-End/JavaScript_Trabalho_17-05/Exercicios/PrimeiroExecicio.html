@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Olá, mundo!</title>
+
+  </head>
+  <body>]
+    
+    <div class="container">
+      <div class="col-6 form-group">
+        <label></label>
+        <input type="text" onfocus="ExibirMensagem()" class="form-control"
+         placeholder="Primeira Caixa de Texto"/>
+  </div> 
+    <div class="col-6 form-group">
+      <label></label>
+      <input type="text" onfocus="exibirMensagen()" onblur="exibirMensagen()" class="form-control" 
+      placeholder="Segunda caixa de texto"/>
+  </div>   
+  </div>
+    <div>
+  </div>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script>
+      function ExibirMensagem(){
+        alert("Primeira caixa ativada");
+      }
+      function exibirMensagen(){
+        alert("Perdeu o foco");
+      }
+    </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('click', () => {
+          alert('Perdeu o foco');
+        });
+      });
+
+    </script>
+  
+
+  </head>
+
+  </body>
+</html>

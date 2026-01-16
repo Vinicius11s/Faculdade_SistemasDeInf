@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Exe1</title>
+
+  </head>
+  <body>
+    <h1>Exercicio 1</h1>
+  <main>
+    <form>
+      <div class="col-7">
+        <label>Quantos quilômetros possui a viagem.</label>
+        <input class="form-control" type="text" id="Km"/>
+    </div>
+      <div class="col-7">
+        <label>Quantos quilômetros o carro faz com um litro.</label>
+        <input class="form-control" type="text" id="KmL"/>
+    </div>
+      <div class="col-7">
+        <label>O preço do litro do combustível</label>
+        <input class="form-control" type="text" id="custo"/>
+      </div>
+    </form>
+    <div class="col-6 form-group">
+        <label>Serão gastos com a viagem (LITROS)</label>
+        <input type="text" readonly 
+        class="form-control" id="txtresultado"/>
+    </div>
+    <div class="col-6 form-group">
+        <label>Serão gastos com a viagem (R$)</label>
+        <input type="text" readonly
+        class="form-control" id="txtresultado2"/>
+    </div>
+      <div class="container-fluid">
+        <input type="button"  class="btn btn-success"
+        value="calcular" onclick="CalculaCombustivel()"/>
+    </div>
+    <br/>
+      <div class="container-fluid">
+        <input type="button"  class="btn btn-success"
+        value="calcular gastos" onclick="CalculaGastos()"/>
+    </div>
+  </main>
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>      
+    <script src="js/popper.min.js" ></script> 
+    <script src="js/bootstrap.min.js" ></script>
+    <script>
+          function CalculaCombustivel(){
+            var Km, KmL, resultado, validaKm, validaKmL ;
+            Km = document.getElementById("Km").value;
+            KmL = document.getElementById("KmL").value;
+
+            validaKm = isNaN(Km);               
+            validaKmL = isNaN(KmL);
+
+            if(validaKm== false && validaKmL==false && Km!="" && KmL!=""){
+              Km = parseFloat(Km);
+              KmL = parseFloat(KmL);
+              resultado =  Km / KmL;
+              document.getElementById("txtresultado").value = resultado;
+            }
+            else alert("Informe somente valores numéricos")
+          }
+
+          function CalculaGastos(){
+            var Km, KmL, resultado, validaKm, validaKmL, resultado2, rs, validars ;
+            Km = document.getElementById("Km").value;
+            KmL = document.getElementById("KmL").value;
+            rs = document.getElementById("custo").value;
+
+            validaKm = isNaN(Km);               
+            validaKmL = isNaN(KmL);
+            validars = isNaN(rs);
+
+            if(validaKm== false && validaKmL==false && validars== false && rs!="" && Km!="" && KmL!=""){
+              Km = parseFloat(Km);
+              KmL = parseFloat(KmL);
+              rs = parseFloat(rs);
+              resultado =  Km / KmL;
+              resultado2 = resultado * rs;
+              document.getElementById("txtresultado2").value = resultado2;
+            }
+            else alert("Informe somente valores numéricos")
+          }
+   </script>
+
+
+
+  </body>
+</html>

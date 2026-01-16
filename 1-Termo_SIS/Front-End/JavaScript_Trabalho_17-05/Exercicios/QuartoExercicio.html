@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <title>Olá, mundo!</title>
+  </head>
+  <body>
+    <br/>
+    <main class="container-fluid">
+        <div class="col-6 form-group">
+          <label>Informe a nota 1 </label>
+          <input type="text" class="form-control" id="txtnumero1"
+          onblur="validan1()"/>
+          <span id="textoTxtnumero1" ></span>
+      </div>
+      <main class="container-fluid">
+        <div class="col-6 form-group">
+          <label>Informe a nota 2</label>
+          <input type="text" class="form-control" id="txtnumero2"
+          onblur="validan2()"/>
+          <span id="textoTxtnunero2" ></span>
+      </div>
+      <div class="col-6 form-group">
+        <label>Nota Final</label>
+        <input type="text" readonly 
+        class="form-control" id="txtresultado"/>
+    </div>
+    <div class="container-fluid">
+        <input type="button" class="btn btn-success"
+        value="Calcular" onclick="calcularNota()"/>
+    </div>
+    <br/>
+    <div class="col-6 form-group">
+        <label>Voce está :</label>
+        <input type="text" readonly 
+        class="form-control" id="txtvalor"/>
+    </div>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script>
+         function validaNumero1(){
+            var n1;
+            n1 = document.getElementById("txtnumero1").value;
+            if(n1 == "" || isNaN(n1) == true)
+            {
+              document.getElementById("textoTxtNumero1").textContent
+              = "Informe um valor numerico";
+              document.getElementById("txtnumero1").focus();
+           }
+           else
+           document.getElementById("textoTxtNumero1").textContent = "";
+         }
+
+           function validaNumero2(){
+            var n2;
+            n2 = document.getElementById("txtnumero2").value;
+            if(n2 == "" || isNaN(n2) == true)
+            {
+              document.getElementById("textoTxtNumero2").textContent
+              = "Informe um valor numérico";
+              document.getElementById("txtnumero2").focus();
+            }
+           else
+           document.getElementById("textoTxtNumero2").textContent = "";
+        }
+        function calcularNota(){
+            var n1, n2, resultado, validan1, validan2 ;
+            n1 = document.getElementById("txtnumero1").value;
+            n2 = document.getElementById("txtnumero2").value;
+            //validar os campos
+            validan1 = isNaN(n1);// true (nao for numero)
+                                  //false (se for numero)
+            validan2 = isNaN(n2);
+            if(validan1== false && validan2==false && n1!="" && n2!=""){
+              n1 = parseFloat(n1);
+              n2 = parseFloat(n2);
+              resultado =  (n1 + n2) / 2;
+              document.getElementById("txtresultado").value = resultado;
+              // alert("Resultado: " + resultado);
+            }
+            else alert("Informe somente valores numéricos")
+            var resultado;
+            resultado = document.getElementById("txtresultado").value; 
+            if(resultado < 3.0){
+                valor = "Reprovado";
+                document.getElementById("txtvalor").value = valor;
+            }
+            else{}
+                if(resultado >= 7.0){
+                    valor = "Aprovado!!";
+                    document.getElementById("txtvalor").value = valor;
+                }
+                else{}
+                    if(resultado >= 3.0 && resultado < 7.0){
+                        valor = "De Exame";
+                        document.getElementById("txtvalor").value = valor;
+                    }
+                    else{}   
+                }                 
+    </script>
+    </main> 
+  </head>
+
+  </body>
+</html>

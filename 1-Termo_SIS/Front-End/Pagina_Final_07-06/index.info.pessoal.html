@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon_transparent_32x32.png" type="image/png">
+
+    <title>V Multimarcas</title>
+
+  </head>
+  <body>
+    <header class="header">
+      <div class="row">
+            <h2 class="logo">V Multimarcas</h2>
+            <div class="col-4">
+          </div>
+    </div>
+</header>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <img src="favicon_transparent_32x32.png">
+      <a class="navbar-brand" href="index.html"> Inicio</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lançamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Ofertas</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+  <main id="main">
+    <br/>
+    <nav style="padding-right: 5px;" aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="index.info.pessoal.html">Informações Pessoais</a></li>
+          <li class="page-item"><a class="page-link" href="index.entrega.html">Entrega</a></li>
+          <li class="page-item"><a class="page-link" href="index.checkout.html">Checkout</a></li>
+        </ul>
+      </nav>
+      <br/>
+      <div class="container-fluid">
+        <h4><img src="icone-dadospessoais.png">  Informções Pessoais</h4>
+          <p style="font-size: 10px;">Quem irá receber o produto ?</p>
+          </div>
+        </div>
+      </div>
+    <br/>
+    <form style="padding-left: 400px;" class="main;">
+        <div class="col-md-7">
+            <label for="validationDefault01" class="form-label">E-mail*</label>
+            <input type="text" class="form-control" id="validationDefault01" value="" required>
+        </div>
+        <br/>
+      <div class="col-md-7">
+        <label for="validationDefault01" class="form-label">Nome Completo*</label>
+        <input type="text" class="form-control" id="validationDefault01" value="" required>
+      </div>
+      <br/>
+      <div class="col-md-7">
+        <label for="validationDefault03" class="form-label">CPF*</label>
+        <input style="text-align: center;" placeholder="000.000.000-00" type="text" class="form-control" id="identification" maxlength="14" required>
+      </div>
+      <br/>
+      <div class="col-md-7">
+        <label for="validationDefault03" class="form-label">Telefone*</label>
+        <input type="text" class="form-control" maxlength="" required>
+      </div>
+      <br/>
+      <div class="col-7">
+        <br/>
+        <a href="index.entrega.html"><button class="btn btn-primary" type="submit">Continuar</button></a>
+        <br/><br/>
+      </div>
+      
+    </form>
+  <br/>
+</main>
+<footer class="footer">
+  <br/>
+  <div style="color: white" class="container-text-center">
+    <div class="row text-center">
+      <div class="col-md-3">
+        <h6>Cadastre-se para receber novidades</h6>
+        <br/>
+        <h6>Cartão Presente</h6>
+    </div>
+      <div class="col-md-3">
+        <h5>Ajuda</h5>
+        Encontre seu Número<br/>
+        Pedidos<br/>
+    </div>
+      <div class="col-md-3">
+        <h5> Dúvidas Gerais</h5>
+        Trocas e Devoluções<br/>
+        Fale Conosco<br/>
+    </div>
+      <div class="col-md-3">
+        <h5>Contato</h5>
+        <h6>@Vinicius.11s</h6>
+        <h6>(18)99625-1546</h6>
+    </div>
+   </div>
+  </div>    
+  <br/>
+  </footer>
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>  
+        <script>
+            document.getElementById('identification').addEventListener('input', function(e) {
+            
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+                e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' : '') + x[3] + (x[4] ? '/' : 
+                x[4]) + x[4] + (x[5] ? '-' + x[5] : '');
+                
+                if(e.target.value.length < 15) {
+                    x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,2})/);
+                    e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' : '') + x[3] + (x[4] ? '-' 
+                    + x[4] : '');
+                }
+        
+                console.log('Com formatação: ' + e.target.value);
+                
+                let valor = e.target.value.replace(/[^0-9]/g, '');
+                console.log('Sem formatação: ' + valor);
+            });
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

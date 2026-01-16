@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Olá, mundo!</title>
+  </head>
+  <body>
+    <br/>
+    <main class="container">
+        <div class="col-6 form-group">
+          <label>Informe o m3</label>
+          <input type="text" class="form-control" id="txtm3"
+          onblur="validaM3()"/>
+          <span id="textom3" ></span>
+      </div>
+      <div class="col-6 form-group">
+        <label>Resultado</label>
+        <input type="text" readonly 
+        class="form-control" id="txtcalc"/>
+    </div>
+    <div class="container">
+        <input type="button" class="btn btn-success"
+        value="Calcular" onclick="calcularM3()"/>
+    </div>
+    <br/>
+    <div class="container">
+        <input type="button" class="btn btn-success"
+        value="Calcular Valor a ser Pago" onclick="calculaDesc()"/>
+    </div>
+    <div class="col-6 form-group">
+        <label></label>
+        <input type="text" readonly 
+        class="form-control" id="txtvalor"/>
+    </div>
+    <script>
+        function validaM3(){
+            var m3;
+            m3 = document.getElementById("txtm3").value;
+            if(m3 == "" || isNaN(m3) == true)
+            {
+              document.getElementById("textom3").textContent
+              = "Informe um valor numerico";
+              document.getElementById("txtm3").focus();
+           }
+           else
+           document.getElementById("textom3").textContent = "";
+
+         }
+         function calcularM3(){
+            var m3, calc, validaM3;
+            m3 = document.getElementById("txtm3").value;
+            //validar os campos
+            validaM3 = isNaN(m3);// true (nao for numero)
+                                  //false (se for numero)
+            if(validaM3== false && m3!="" && m3 <= 20){
+              m3 = parseFloat(m3);
+              calc = 1.60 * m3;
+              document.getElementById("txtcalc").value = calc;
+              // alert("Resultado: " + resultado);
+            }
+            else{}
+                if(validaM3== false && m3!="" && m3 > 20 && m3 <= 50){
+                 m3 = parseFloat(m3);
+                calc = 2.80 * m3;
+                document.getElementById("txtcalc").value = calc;
+                 }
+                else{}
+                    if(validaM3== false && m3!="" && m3 > 50){
+                    m3 = parseFloat(m3);
+                    calc = 4.20 * m3;
+                    document.getElementById("txtcalc").value = calc;
+                    }
+                    else{}
+        }
+        function calculaDesc(){
+            var desc, valor;
+            calc = document.getElementById("txtcalc").value; 
+            if(calc <= 100){
+                desc = (calc / 100) * 5;
+                valor = calc - desc;
+                document.getElementById("txtvalor").value = valor;
+            }
+            else{
+                desc = (calc / 100) * 10;
+                valor = calc + desc;
+                document.getElementById("txtvalor").value = valor;
+                
+            }
+        }
+    </script>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+  </body>
+</html>

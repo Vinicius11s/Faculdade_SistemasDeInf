@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Olá Mundo</title>
+  </head>
+  <body>
+    <h1>Olá Mundo</h1>
+    <main class="container    ">
+      <div class="col-6 form-group">
+        <label>Numero 1</label>
+        <input type="text" class="form-control" id="txtnumero1"
+        onblur="validaNumero1()"/>
+        <span id="textoTxtNumero1" ></span>
+    </div>
+      <div class="col-6 form-group">
+          <label>Numero 2</label>
+          <input type="text" class="form-control" id="txtnumero2"
+          onblur="validaNumero2()"/>
+          <span id="textoTxtNumero2" ></span>
+    </div>
+    <div class="col-6 form-group">
+        <label>Resultado</label>
+        <input type="text" readonly 
+        class="form-control" id="txtresultado"/>
+    </div>
+    <div class="container">
+        <input type="button" class="btn btn-success"
+        value="Somar" onclick="calcularSoma()"/>
+
+        <input type="button" class="btn btn-success"
+        value="Subtração" onclick="calcularSub()"/>
+
+        <input type="button" class="btn btn-success"
+        value="Multiplicação" onclick="calcularMult()"/>
+   
+        <input type="button" class="btn btn-success"
+        value="Divisão" onclick="calcularDiv()"/>
+    </div>
+  </main>
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+          function validaNumero1(){
+            var n1;
+            n1 = document.getElementById("txtnumero1").value;
+            if(n1 == "" || isNaN(n1) == true)
+            {
+              document.getElementById("textoTxtNumero1").textContent
+              = "Informe um valor numerico";
+              document.getElementById("txtnumero1").focus();
+           }
+           else
+           document.getElementById("textoTxtNumero1").textContent = "";
+         }
+
+           function validaNumero2(){
+            var n2;
+            n2 = document.getElementById("txtnumero2").value;
+            if(n2 == "" || isNaN(n2) == true)
+            {
+              document.getElementById("textoTxtNumero2").textContent
+              = "Informe um valor numérico";
+              document.getElementById("txtnumero2").focus();
+            }
+           else
+           document.getElementById("textoTxtNumero2").textContent = "";
+
+        }
+          function calcularSoma(){
+            var n1, n2, resultado, validan1, validan2 ;
+            n1 = document.getElementById("txtnumero1").value;
+            n2 = document.getElementById("txtnumero2").value;
+            //validar os campos
+            validan1 = isNaN(n1);// true (nao for numero)
+                                  //false (se for numero)
+            validan2 = isNaN(n2);
+            if(validan1== false && validan2==false && n1!="" && n2!=""){
+              n1 = parseFloat(n1);
+              n2 = parseFloat(n2);
+              resultado =  n1 + n2;
+              document.getElementById("txtresultado").value = resultado;
+              // alert("Resultado: " + resultado);
+            }
+            else alert("Informe somente valores numéricos")
+          }
+        </script>
+         <script>
+            function calcularSub(){
+              var n1, n2, resultado, validan1, validan2 ;
+              n1 = document.getElementById("txtnumero1").value;
+              n2 = document.getElementById("txtnumero2").value;
+              //validar os campos
+              validan1 = isNaN(n1);// true (nao for numero)
+                                    //false (se for numero)
+              validan2 = isNaN(n2);
+              if(validan1== false && validan2==false && n1!="" && n2!=""){
+                n1 = parseFloat(n1);
+                n2 = parseFloat(n2);
+                resultado =  n1 - n2;
+                document.getElementById("txtresultado").value = resultado;
+                //alert("Resultado: " + resultado);
+              }
+              else alert("Informe somente valores numéricos")
+            }
+          </script>
+         <script>
+            function calcularMult(){
+              var n1, n2, resultado, validan1, validan2 ;
+              n1 = document.getElementById("txtnumero1").value;
+              n2 = document.getElementById("txtnumero2").value;
+              //validar os campos
+              validan1 = isNaN(n1);//
+              validan2 = isNaN(n2);
+              if(validan1== false && validan2==false && n1!="" && n2!=""){
+                n1 = parseFloat(n1);
+                n2 = parseFloat(n2);
+                resultado =  n1 * n2;
+                document.getElementById("txtresultado").value = resultado;
+                //alert("Resultado: " + resultado);
+              }
+              else alert("Informe somente valores numéricos")
+            }
+          </script>
+         <script>
+            function calcularDiv(){
+              var n1, n2, resultado, validan1, validan2 ;
+              n1 = document.getElementById("txtnumero1").value;
+              n2 = document.getElementById("txtnumero2").value;
+              //validar os campos
+              validan1 = isNaN(n1);
+              validan2 = isNaN(n2);
+              if(validan1== false && validan2==false && n1!="" && n2!=""){
+                n1 = parseFloat(n1);
+                n2 = parseFloat(n2);
+                resultado =  n1 / n2;
+                document.getElementById("txtresultado").value = resultado;
+                //alert("Resultado: " + resultado);
+              }
+              else alert("Informe somente valores numéricos")
+            }
+          </script>
+    </header> 
+  </body>
+</html>

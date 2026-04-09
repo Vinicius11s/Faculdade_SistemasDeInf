@@ -1,0 +1,29 @@
+Servidor -> Apache Tomcat: Dizemos que ele é um
+container de Servlets
+
+Servlets -> o que é uma servlet ?
+É uma classe Java que roda no servidor 
+CHEGAR GET OU POST ela que encaminha
+Servlet é o coração
+
+@WebServlet/aluno(endereço no qual ela vai responder)
+
+Para que conseguimos trabalhar com request, response, precisa
+se estender ou derivar de HTTP Servlet
+Exemplo: 
+
+@WebServlet/aluno
+public AlunoServlet extends HttpServlet
+
+- Uma vez que essa servlet está no container, conseguimos
+gerenciar seu ciclo de vida.
+
+1.Container vai instanciar a servlet
+como -> construtor vazio
+em seguida -> executar o método Init
+2.em seguida -> o container irá executar o método service
+
+metodo service tem o poder de delegar
+em seguida -> ele manda executar o método apropriado
+
+3.Por fim irá chamar o método dest

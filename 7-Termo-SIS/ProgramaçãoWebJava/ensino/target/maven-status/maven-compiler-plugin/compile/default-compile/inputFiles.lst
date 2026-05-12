@@ -1,0 +1,17 @@
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\controller\AlunoController.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\controller\CursoController.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\controller\MatriculaController.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\controller\ProfessorController.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\dto\CursoDTO.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\dto\ProfessorDTO.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\EnsinoApplication.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\model\Aluno.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\model\Curso.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\model\Professor.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\repository\AlunoRepository.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\repository\CursoRepository.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\repository\ProfessorRepository.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\service\AlunoService.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\service\CursoService.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\service\MatriculaService.java
+C:\Users\viniciushorta\Documents\GitHub\SistemasDeInformacao\7-Termo-SIS\ProgramaçãoWebJava\ensino\src\main\java\com\fachiano\ensino\service\ProfessorService.java

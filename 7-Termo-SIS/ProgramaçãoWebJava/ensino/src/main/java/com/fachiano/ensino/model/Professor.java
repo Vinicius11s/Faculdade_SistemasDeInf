@@ -2,11 +2,13 @@ package com.fachiano.ensino.model;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Professor {
@@ -19,6 +21,7 @@ public class Professor {
     private String especialidade;
     
     @OneToMany(mappedBy="professor")
+    @JsonIgnore
     private List<Curso> cursos;
 
     public Professor() {}

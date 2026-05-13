@@ -1,0 +1,17 @@
+com\fachiano\ensino\controller\AlunoController.class
+com\fachiano\ensino\EnsinoApplication.class
+com\fachiano\ensino\repository\ProfessorRepository.class
+com\fachiano\ensino\controller\MatriculaController.class
+com\fachiano\ensino\controller\ProfessorController.class
+com\fachiano\ensino\dto\CursoDTO.class
+com\fachiano\ensino\model\Professor.class
+com\fachiano\ensino\service\ProfessorService.class
+com\fachiano\ensino\model\Curso.class
+com\fachiano\ensino\service\MatriculaService.class
+com\fachiano\ensino\repository\AlunoRepository.class
+com\fachiano\ensino\service\AlunoService.class
+com\fachiano\ensino\service\CursoService.class
+com\fachiano\ensino\controller\CursoController.class
+com\fachiano\ensino\model\Aluno.class
+com\fachiano\ensino\dto\ProfessorDTO.class
+com\fachiano\ensino\repository\CursoRepository.class

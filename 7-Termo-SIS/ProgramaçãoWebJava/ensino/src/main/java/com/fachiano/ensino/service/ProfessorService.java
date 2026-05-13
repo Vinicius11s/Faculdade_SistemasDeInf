@@ -1,6 +1,7 @@
 package com.fachiano.ensino.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class ProfessorService {
                 .orElseThrow(() -> new RuntimeException("Professor não encontrado."));
         List<CursoDTO> cursos = professor.getCursos().stream()
                 .map(c -> new CursoDTO(c.getId(), c.getNome(), professor.getNome()))
-                .toList();
+                .collect(Collectors.toList());
         return new ProfessorDTO(professor.getId(), professor.getNome(), professor.getEspecialidade(), cursos);
     }
 

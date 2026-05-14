@@ -1,18 +1,19 @@
 package com.disciplina.biblioteca.exception;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.ConstraintViolationException;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND.getReasonPhrase(),
                 ex.getMessage(),
                 request.getRequestURI(),
-                List.of());
+                Collections.emptyList());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
     }
 
@@ -43,7 +44,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.CONFLICT.getReasonPhrase(),
                 ex.getMessage(),
                 request.getRequestURI(),
-                List.of());
+                Collections.emptyList());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
     }
 
@@ -84,7 +85,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.BAD_REQUEST.getReasonPhrase(),
                 "Corpo da requisição JSON inválido ou malformado",
                 request.getRequestURI(),
-                List.of());
+                Collections.emptyList());
         return ResponseEntity.badRequest().body(body);
     }
 
@@ -95,7 +96,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.CONFLICT.getReasonPhrase(),
                 "Violação de integridade no banco de dados (valor duplicado ou referência inválida)",
                 request.getRequestURI(),
-                List.of());
+                Collections.emptyList());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(body);
     }
 
@@ -107,7 +108,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),
                 "Erro interno. Tente novamente mais tarde.",
                 request.getRequestURI(),
-                List.of());
+                Collections.emptyList());
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AutorService {
@@ -22,7 +23,7 @@ public class AutorService {
 
     @Transactional(readOnly = true)
     public List<AutorResponse> listar() {
-        return autorRepository.findAll().stream().map(this::toResponse).toList();
+        return autorRepository.findAll().stream().map(this::toResponse).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
@@ -34,13 +35,13 @@ public class AutorService {
 
     @Transactional
     public AutorResponse criar(AutorRequest request) {
-        autorRepository.findByNomeIgnoreCase(request.nome().trim())
+        autorRepository.findByNomeIgnoreCase(request.getNome().trim())
                 .ifPresent(a -> {
-                    throw new RegraNegocioException("Já existe um autor com o nome: " + request.nome());
+                    throw new RegraNegocioException("Já existe um autor com o nome: " + request.getNome());
                 });
         Autor autor = new Autor();
-        autor.setNome(request.nome().trim());
-        autor.setPaisOrigem(trimToNull(request.paisOrigem()));
+        autor.setNome(request.getNome().trim());
+        autor.setPaisOrigem(trimToNull(request.getPaisOrigem()));
         return toResponse(autorRepository.save(autor));
     }
 
@@ -48,13 +49,13 @@ public class AutorService {
     public AutorResponse atualizar(Long id, AutorRequest request) {
         Autor autor = autorRepository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Autor não encontrado com id: " + id));
-        autorRepository.findByNomeIgnoreCase(request.nome().trim())
+        autorRepository.findByNomeIgnoreCase(request.getNome().trim())
                 .filter(a -> !a.getId().equals(id))
                 .ifPresent(a -> {
-                    throw new RegraNegocioException("Já existe outro autor com o nome: " + request.nome());
+                    throw new RegraNegocioException("Já existe outro autor com o nome: " + request.getNome());
                 });
-        autor.setNome(request.nome().trim());
-        autor.setPaisOrigem(trimToNull(request.paisOrigem()));
+        autor.setNome(request.getNome().trim());
+        autor.setPaisOrigem(trimToNull(request.getPaisOrigem()));
         return toResponse(autorRepository.save(autor));
     }
 

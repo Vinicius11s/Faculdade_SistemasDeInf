@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+  <header>
+    <h1>Biblioteca</h1>
+    <p class="hint">Endereço da API (só preencha se esta página for aberta de outro host ou porta que não a da aplicação).</p>
+    <label>URL base <input type="text" id="apiBase" placeholder="http://localhost:8080" value="" autocomplete="off" /></label>
+    <button type="button" id="btnSaveBase">Gravar</button>
+  </header>
+
+  <div id="msg" class="msg" role="status"></div>
+
+  <nav class="tabs">
+    <button type="button" class="tab active" data-tab="autores">Autores</button>
+    <button type="button" class="tab" data-tab="categorias">Categorias</button>
+    <button type="button" class="tab" data-tab="livros">Livros</button>
+  </nav>
+
+  <section id="panel-autores" class="panel active">
+    <h2>Autores</h2>
+    <form id="formAutor" class="card">
+      <input type="hidden" id="autorId" />
+      <label>Nome <input type="text" id="autorNome" required maxlength="120" autocomplete="off" /></label>
+      <label>País <input type="text" id="autorPais" maxlength="80" placeholder="opcional" autocomplete="off" /></label>
+      <div class="actions">
+        <button type="submit">Salvar</button>
+        <button type="button" id="autorNovo">Limpar</button>
+      </div>
+    </form>
+    <div class="card">
+      <h3>Lista</h3>
+      <button type="button" id="autorRefresh">Atualizar</button>
+      <ul id="listaAutores" class="lista"></ul>
+    </div>
+  </section>
+
+  <section id="panel-categorias" class="panel">
+    <h2>Categorias</h2>
+    <form id="formCategoria" class="card">
+      <input type="hidden" id="categoriaId" />
+      <label>Nome <input type="text" id="categoriaNome" required maxlength="80" autocomplete="off" /></label>
+      <div class="actions">
+        <button type="submit">Salvar</button>
+        <button type="button" id="categoriaNovo">Limpar</button>
+      </div>
+    </form>
+    <div class="card">
+      <h3>Lista</h3>
+      <button type="button" id="categoriaRefresh">Atualizar</button>
+      <ul id="listaCategorias" class="lista"></ul>
+    </div>
+  </section>
+
+  <section id="panel-livros" class="panel">
+    <h2>Livros</h2>
+    <form id="formLivro" class="card">
+      <input type="hidden" id="livroId" />
+      <label>Título <input type="text" id="livroTitulo" required maxlength="200" autocomplete="off" /></label>
+      <label>ISBN <input type="text" id="livroIsbn" required minlength="10" maxlength="20" placeholder="9780132350884" autocomplete="off" /></label>
+      <label>Ano <input type="text" id="livroAno" inputmode="numeric" pattern="[0-9]{1,4}" maxlength="4" required autocomplete="off" /></label>
+      <label>Autor (id) <input type="text" id="livroAutorId" inputmode="numeric" pattern="[0-9]+" required autocomplete="off" /></label>
+      <label>Categorias (ids separados por vírgula) <input type="text" id="livroCatIds" placeholder="1, 2" autocomplete="off" /></label>
+      <div class="actions">
+        <button type="submit">Salvar</button>
+        <button type="button" id="livroNovo">Limpar</button>
+      </div>
+    </form>
+    <div class="card">
+      <h3>Lista</h3>
+      <button type="button" id="livroRefresh">Atualizar</button>
+      <ul id="listaLivros" class="lista"></ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Rotas: <code>/api/autores</code>, <code>/api/categorias</code>, <code>/api/livros</code></p>
+  </footer>
+
+  <script src="app.js?v=3"></script>
+</body>
+</html>

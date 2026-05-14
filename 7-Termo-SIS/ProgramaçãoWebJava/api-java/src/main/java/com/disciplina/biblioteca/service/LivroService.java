@@ -13,6 +13,7 @@ import com.disciplina.biblioteca.repository.LivroRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -33,7 +34,7 @@ public class LivroService {
 
     @Transactional(readOnly = true)
     public List<LivroResponse> listar() {
-        return livroRepository.findAll().stream().map(this::toResponse).toList();
+        return livroRepository.findAll().stream().map(this::toResponse).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
@@ -45,18 +46,18 @@ public class LivroService {
 
     @Transactional
     public LivroResponse criar(LivroRequest request) {
-        String isbn = normalizarIsbn(request.isbn());
+        String isbn = normalizarIsbn(request.getIsbn());
         if (livroRepository.existsByIsbn(isbn)) {
             throw new RegraNegocioException("Já existe um livro com o ISBN: " + isbn);
         }
-        Autor autor = autorService.obterEntidade(request.autorId());
+        Autor autor = autorService.obterEntidade(request.getAutorId());
         Set<Categoria> categorias = categoriaService.obterPorIds(
-                request.categoriaIds() == null ? List.of() : request.categoriaIds());
+                request.getCategoriaIds() == null ? Collections.emptyList() : request.getCategoriaIds());
 
         Livro livro = new Livro();
-        livro.setTitulo(request.titulo().trim());
+        livro.setTitulo(request.getTitulo().trim());
         livro.setIsbn(isbn);
-        livro.setAnoPublicacao(request.anoPublicacao());
+        livro.setAnoPublicacao(request.getAnoPublicacao());
         livro.setAutor(autor);
         livro.setCategorias(new HashSet<>(categorias));
         return toResponse(livroRepository.save(livro));
@@ -66,17 +67,17 @@ public class LivroService {
     public LivroResponse atualizar(Long id, LivroRequest request) {
         Livro livro = livroRepository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Livro não encontrado com id: " + id));
-        String isbn = normalizarIsbn(request.isbn());
+        String isbn = normalizarIsbn(request.getIsbn());
         if (livroRepository.existsByIsbnAndIdNot(isbn, id)) {
             throw new RegraNegocioException("Já existe outro livro com o ISBN: " + isbn);
         }
-        Autor autor = autorService.obterEntidade(request.autorId());
+        Autor autor = autorService.obterEntidade(request.getAutorId());
         Set<Categoria> categorias = categoriaService.obterPorIds(
-                request.categoriaIds() == null ? List.of() : request.categoriaIds());
+                request.getCategoriaIds() == null ? Collections.emptyList() : request.getCategoriaIds());
 
-        livro.setTitulo(request.titulo().trim());
+        livro.setTitulo(request.getTitulo().trim());
         livro.setIsbn(isbn);
-        livro.setAnoPublicacao(request.anoPublicacao());
+        livro.setAnoPublicacao(request.getAnoPublicacao());
         livro.setAutor(autor);
         livro.getCategorias().clear();
         livro.getCategorias().addAll(categorias);

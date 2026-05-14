@@ -3,7 +3,7 @@ package com.disciplina.biblioteca.controller;
 import com.disciplina.biblioteca.dto.AutorRequest;
 import com.disciplina.biblioteca.dto.AutorResponse;
 import com.disciplina.biblioteca.service.AutorService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

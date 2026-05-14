@@ -9,6 +9,7 @@ import com.disciplina.biblioteca.repository.CategoriaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -24,7 +25,7 @@ public class CategoriaService {
 
     @Transactional(readOnly = true)
     public List<CategoriaResponse> listar() {
-        return categoriaRepository.findAll().stream().map(this::toResponse).toList();
+        return categoriaRepository.findAll().stream().map(this::toResponse).collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
@@ -36,12 +37,12 @@ public class CategoriaService {
 
     @Transactional
     public CategoriaResponse criar(CategoriaRequest request) {
-        categoriaRepository.findByNomeIgnoreCase(request.nome().trim())
+        categoriaRepository.findByNomeIgnoreCase(request.getNome().trim())
                 .ifPresent(c -> {
-                    throw new RegraNegocioException("Já existe uma categoria com o nome: " + request.nome());
+                    throw new RegraNegocioException("Já existe uma categoria com o nome: " + request.getNome());
                 });
         Categoria c = new Categoria();
-        c.setNome(request.nome().trim());
+        c.setNome(request.getNome().trim());
         return toResponse(categoriaRepository.save(c));
     }
 
@@ -49,12 +50,12 @@ public class CategoriaService {
     public CategoriaResponse atualizar(Long id, CategoriaRequest request) {
         Categoria c = categoriaRepository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Categoria não encontrada com id: " + id));
-        categoriaRepository.findByNomeIgnoreCase(request.nome().trim())
+        categoriaRepository.findByNomeIgnoreCase(request.getNome().trim())
                 .filter(x -> !x.getId().equals(id))
                 .ifPresent(x -> {
-                    throw new RegraNegocioException("Já existe outra categoria com o nome: " + request.nome());
+                    throw new RegraNegocioException("Já existe outra categoria com o nome: " + request.getNome());
                 });
-        c.setNome(request.nome().trim());
+        c.setNome(request.getNome().trim());
         return toResponse(categoriaRepository.save(c));
     }
 
@@ -70,7 +71,7 @@ public class CategoriaService {
 
     Set<Categoria> obterPorIds(List<Long> ids) {
         if (ids == null || ids.isEmpty()) {
-            return Set.of();
+            return Collections.emptySet();
         }
         List<Categoria> encontradas = categoriaRepository.findAllById(ids);
         long idsDistintos = ids.stream().distinct().count();

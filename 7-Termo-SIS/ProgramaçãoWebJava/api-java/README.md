@@ -166,7 +166,7 @@ Classe `GlobalExceptionHandler` (`@RestControllerAdvice`) com corpo JSON (`ErroR
 
 ### Link do repositório
 
-*(Cole aqui o link público após o push, por exemplo GitHub.)*
+https://github.com/Vinicius11s/api-java
 
 ### Apresentação em sala (roteiro)
 
